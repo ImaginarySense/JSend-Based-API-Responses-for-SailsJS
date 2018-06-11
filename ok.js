@@ -18,7 +18,7 @@ module.exports = function(data, view) {
     message = 'Ok';
   let viewFilePath = 'success';
   if (view)
-  	viewFilePath = view;
+    viewFilePath = view;
 
   // Get req and res
   let req = this.req,
@@ -48,10 +48,10 @@ module.exports = function(data, view) {
     return res.status(statusCode).json(result);
 
   // Set status code and view locals
-  res.status(statusCode);
-  for (let key in result) {
-    res.locals[key] = result[key];
-  }
+  // res.status(statusCode);
+  // for (let key in result) {
+  //   res.locals[key] = result[key];
+  // }
   // And render view
   res.view(viewFilePath, result, function(err) {
     // If the view doesn't exist, or an error occurred, send json
