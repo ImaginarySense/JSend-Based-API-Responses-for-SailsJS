@@ -15,7 +15,7 @@ module.exports = function(data, message, view) {
   // Response configuration
   const statusCode = 201,
     JSONStatus = 'success';
-  if (message !== undefined)
+  if (message === undefined)
     message = 'Created';
   // let viewFilePath = 'success';
   // if (view)
