@@ -61,8 +61,9 @@ module.exports = function conflict(optionalData) {
     }
   }
   // Set status code and send response data.
-  else
-  {return res.status(statusCodeToSet).send(optionalData);}
+  else {
+    return res.status(statusCodeToSet).send(optionalData);
+  }
 
 
 };
