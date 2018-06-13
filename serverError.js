@@ -27,8 +27,8 @@ module.exports = function(data, message) {
   let req = this.req,
     res = this.res;
 
-  if (data !== undefined) 
-  	sails.log.verbose('Sending '+statusCode+' ("'+message+'") response: \n', data);
+  if (data !== undefined)
+    sails.log.verbose('Sending '+statusCode+' ("'+message+'") response: \n', data);
   else
     sails.log.verbose('Sending '+statusCode+' ("'+message+'") response');
 

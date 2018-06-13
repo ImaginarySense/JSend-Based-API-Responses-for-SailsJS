@@ -29,11 +29,11 @@
 module.exports = function conflict(optionalData) {
   //
   // Get access to `req` and `res`
-  var req = this.req;
-  var res = this.res;
-
-  // Define the status code to send in the response.
-  var statusCodeToSet = 409;
+  const
+    // eslint-disable-next-linereq = this.req,
+    res = this.res,
+    // Define the status code to send in the response.
+    statusCodeToSet = 409;
 
   // If no data was provided, use res.sendStatus().
   if (optionalData === undefined) {
@@ -52,17 +52,17 @@ module.exports = function conflict(optionalData) {
     // otherwise res.json() would turn it into an empty dictionary.
     // (If this is production, don't send a response body at all.)
     if (!_.isFunction(optionalData.toJSON)) {
-      if (process.env.NODE_ENV === 'production') {
+      if (process.env.NODE_ENV === 'production')
         return res.sendStatus(statusCodeToSet);
-      }
-      else {
+
+      else
         return res.status(statusCodeToSet).send(optionalData.stack);
-      }
+
     }
   }
   // Set status code and send response data.
-  else {
-    return res.status(statusCodeToSet).send(optionalData);
-  }
+  else
+  {return res.status(statusCodeToSet).send(optionalData);}
+
 
 };
