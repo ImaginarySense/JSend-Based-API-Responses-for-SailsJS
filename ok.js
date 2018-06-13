@@ -11,10 +11,11 @@
  * https://labs.omniti.com/labs/jsend
  */
 
-module.exports = function(data, view) {
+module.exports = function(data, message, view) {
   // Response configuration
   const statusCode = 200,
-    JSONStatus = 'success',
+    JSONStatus = 'success';
+  if (message !== undefined)
     message = 'Ok';
   let viewFilePath = 'success';
   if (view)
@@ -42,6 +43,8 @@ module.exports = function(data, view) {
     result.data = data;
   else
     result.data = null;
+  if (message)
+    result.message = message;
 
   // If the user-agent wants a JSON response, send json
   if (req.wantsJSON)
